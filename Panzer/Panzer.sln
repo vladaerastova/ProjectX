@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panzer.CSharp.Plugins", "Panzer.CSharp.Plugins.csproj", "{D86BD7B2-533F-4D2F-C74A-85A0EC9D9483}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panzer.CSharp", "Panzer.CSharp.csproj", "{F1DF5472-F937-0134-6476-EDA4195B33AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panzer.CSharp.Editor", "Panzer.CSharp.Editor.csproj", "{3DCA8753-AE11-C28D-8DBD-D145E7BA44AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D86BD7B2-533F-4D2F-C74A-85A0EC9D9483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86BD7B2-533F-4D2F-C74A-85A0EC9D9483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86BD7B2-533F-4D2F-C74A-85A0EC9D9483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86BD7B2-533F-4D2F-C74A-85A0EC9D9483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1DF5472-F937-0134-6476-EDA4195B33AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1DF5472-F937-0134-6476-EDA4195B33AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1DF5472-F937-0134-6476-EDA4195B33AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1DF5472-F937-0134-6476-EDA4195B33AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCA8753-AE11-C28D-8DBD-D145E7BA44AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCA8753-AE11-C28D-8DBD-D145E7BA44AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCA8753-AE11-C28D-8DBD-D145E7BA44AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCA8753-AE11-C28D-8DBD-D145E7BA44AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
