@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
 using System.Data.SQLite;
+using System.IO;
+
 
 namespace BD_Project
 {
@@ -14,9 +16,10 @@ namespace BD_Project
         {
             BD myBD = new BD();
             myBD.BDOpen();
-            bool tmp = myBD.AddPerson("masha", "12345");
+            //bool tmp = myBD.AddPerson("vovaa", "12345dfvvg");
+            bool tmp = myBD.Update("vovaa", false);
             Console.WriteLine(tmp);
-            Console.WriteLine(myBD.ShowInfo("masha"));
+            Console.WriteLine(myBD.ShowInfo("vovaa"));
             //BD.Authorization("Masya", "bdc23");
             //BD.Authorization("Masya", "bdc123");
             //BD.AddPerson("Masya","bdc123");
@@ -24,6 +27,8 @@ namespace BD_Project
             //BD.Update("Vasya", true);
             //BD.Update("Vasya", false);
             //BD.GetNumberOfGames("Vasya");
+            Statistic stat = new Statistic();
+
             Console.ReadKey(true);
         }
     }
