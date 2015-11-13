@@ -14,26 +14,27 @@ namespace BD_Project
 {
     class BD
     {
-        private SQLiteConnection connection;
+        private static SQLiteConnection connection;
         const string databaseName = @"ProjectXDatebase.db";
 
-        public BD() {
+        static BD() {
             connection = new SQLiteConnection(string.Format("Data Source={0};", databaseName));
 
         }
+        private BD() { }
 
-        public void BDOpen()
+        public static void BDOpen()
         {
             connection.Open();
         }
 
-        public void BDClose()
+        public static void BDClose()
         {
             connection.Close();
         }
 
         
-        public bool Authorization(string @name,string @password)
+        public static bool Authorization(string @name,string @password)
         {
             string hash;
             hash = GetMd5Hash(password);
@@ -51,7 +52,7 @@ namespace BD_Project
 
         }
 
-        public bool AddPerson(string @name,string @password)
+        public static bool AddPerson(string @name,string @password)
         {
 
             SQLiteCommand command = connection.CreateCommand();
@@ -94,7 +95,7 @@ namespace BD_Project
             }
         }
 
-        public string ShowInfo(string name)
+        public static string ShowInfo(string name)
         {
             string result;
             Statistic stat = new Statistic();
@@ -133,7 +134,7 @@ namespace BD_Project
 
             
         }
-        public bool Update(string Name,bool win)
+        public static bool Update(string Name,bool win)
         {
             if (win)
             {

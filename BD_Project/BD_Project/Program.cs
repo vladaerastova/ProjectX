@@ -14,12 +14,11 @@ namespace BD_Project
     {
         static void Main(string[] args)
         {
-            BD myBD = new BD();
-            myBD.BDOpen();
+            BD.BDOpen();
             //bool tmp = myBD.AddPerson("vovaa", "12345dfvvg");
-            bool tmp = myBD.Update("vovaa", false);
+            bool tmp = BD.Update("vovaa", false);
             Console.WriteLine(tmp);
-            Console.WriteLine(myBD.ShowInfo("vovaa"));
+            Console.WriteLine(BD.ShowInfo("vovaa"));
             //BD.Authorization("Masya", "bdc23");
             //BD.Authorization("Masya", "bdc123");
             //BD.AddPerson("Masya","bdc123");
