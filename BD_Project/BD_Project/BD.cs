@@ -95,44 +95,27 @@ namespace BD_Project
             }
         }
 
-        public static string ShowInfo(string name)
+        public static MemoryStream ShowInfo(string name)
         {
-            string result;
             Statistic stat = new Statistic();
             SQLiteCommand command = connection.CreateCommand();
             command.CommandText = "SELECT * FROM 'Users' WHERE Name =@name";
             command.Parameters.Add(new SQLiteParameter("@name", @name));
             SQLiteDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                string id = reader["Id"].ToString();
-                string value = reader["Name"].ToString();
-                int win = Convert.ToInt32(reader["CntWin"]);
-                int lose = Convert.ToInt32(reader["CntLose"]);
-                int num = Convert.ToInt32(reader["CntAll"]);
-                result = "Id:" + id + " " + "Name: " + value + " " + "Namber of games: " + num + " " + "Win: " + win + " " + "Lose: " + lose;
-                //serialization
-                stat.id = id;
-                stat.name = value;
-                stat.all = num;
-                stat.win = win;
-                stat.lose = lose;
-                MemoryStream stream1 = new MemoryStream();
-                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Statistic));
-                ser.WriteObject(stream1, stat);
-                stream1.Position = 0;
-                StreamReader sr = new StreamReader(stream1);
-                Console.Write("JSON form of Statistic object: ");
-                Console.WriteLine(sr.ReadToEnd());
-                return result;
-            }
-            else
-            {
-                result = "Error";
-                return result;
-            }
-
-            
+            stat.id = reader["Id"].ToString(); ;
+            stat.name = reader["Name"].ToString(); ;
+            stat.all = Convert.ToInt32(reader["CntAll"]); ;
+            stat.win = Convert.ToInt32(reader["CntWin"]); ;
+            stat.lose = Convert.ToInt32(reader["CntLose"]); ;
+            MemoryStream stream1 = new MemoryStream();
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Statistic));
+            ser.WriteObject(stream1, stat);
+            return stream1;
+            //Deserilization
+                //stream1.Position = 0;
+                //StreamReader sr = new StreamReader(stream1);
+                //Console.Write("JSON form of Statistic object: ");
+               // Console.WriteLine(sr.ReadToEnd());    
         }
         public static bool Update(string Name,bool win)
         {

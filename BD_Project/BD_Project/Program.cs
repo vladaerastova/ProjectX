@@ -18,7 +18,7 @@ namespace BD_Project
             //bool tmp = myBD.AddPerson("vovaa", "12345dfvvg");
             bool tmp = BD.Update("vovaa", false);
             Console.WriteLine(tmp);
-            Console.WriteLine(BD.ShowInfo("vovaa"));
+            //Console.WriteLine(BD.ShowInfo("vovaa"));
             //BD.Authorization("Masya", "bdc23");
             //BD.Authorization("Masya", "bdc123");
             //BD.AddPerson("Masya","bdc123");
